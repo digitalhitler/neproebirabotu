@@ -4,12 +4,12 @@
 class NPR_Main {
     public function __construct() {
         $this->Config = array(
-            "RootPath" => $_SERVER["DOCUMENT_ROOT"]."/repos/neproebirabotu"
+            "RootPath" => $_SERVER["DOCUMENT_ROOT"]."/neproebirabotu"
         );
     }
 
     public function ShowForm() {
-        require_once( $this->Config{RootPath} . "/views/form.view.php");
+        require_once( "views/form.view.php");
     }
 
     public function ShowSelectbox($Name, $Values, $CurrentValue = "", $Props = "") {
@@ -61,7 +61,7 @@ class NPR_Main {
 
             $tsFirstAlarm = $tsStart - 129600;
             $tsSecondAlarm = $tsStart - 43200;
-            echo date("d.m.Y H:i:s", $tsStart)."<br>";
+            //echo date("d.m.Y H:i:s", $tsStart)."<br>";
             if($day > 0 && $day <= 31) {
                 $vevent = &$v->newComponent("vevent");
 
@@ -118,7 +118,7 @@ class NPR_Main {
 
             $tsFirstAlarm = $tsStart - 129600;
             $tsSecondAlarm = $tsStart - 43200;
-            echo date("d.m.Y H:i:s", $tsStart)."<br>";
+           // echo date("d.m.Y H:i:s", $tsStart)."<br>";
             if($day > 0 && $day <= 31) {
                 $vevent = &$v->newComponent("vevent");
 
@@ -169,6 +169,13 @@ class NPR_Main {
 
         $v->saveCalendar();
 
-        echo "<strong>Всё готово!</strong><p>В течение 15 мин. айфон проверит наличие обновлений в календаре и сам все сделает. Это окно можно смело закрывать.</p>";
+        echo "<center>
+                <img src='static/cat_paws_button.jpg' />
+                <br/><br/><strong>Всё готово!</strong><br /><br />В течение 15 мин. айфон проверит наличие обновлений в календаре и сам все сделает. Это окно можно смело закрывать.></center>
+            <p>
+                Если подписка на этот календарь никогда не осуществлялась ранее, надо перейти по ссылке и добавить календарь в iCloud:<br /><br />
+                <a href='webcal://pesikot.org/cats/job/import/cal.ics'>webcal://pesikot.org/cats/job/import/cal.ics</a>
+            </p>
+            ";
     }
 }
