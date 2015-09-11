@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @app http://52.10.188.220/neproebirabotu
+ * Class NPR_Main
+ */
 
 class NPR_Main {
     public function __construct() {
@@ -174,7 +178,7 @@ class NPR_Main {
                 <br/><br/><strong>Всё готово!</strong><br /><br />В течение 15 мин. айфон проверит наличие обновлений в календаре и сам все сделает. Это окно можно смело закрывать.></center>
             <p>
                 Если подписка на этот календарь никогда не осуществлялась ранее, надо перейти по ссылке и добавить календарь в iCloud:<br /><br />
-                <a href='webcal://pesikot.org/cats/job/import/cal.ics'>webcal://pesikot.org/cats/job/import/cal.ics</a>
+                <a href='webcal://52.10.188.220/neproebirabotu/import/cal.ics'>webcal://52.10.188.220/neproebirabotu/import/cal.ics</a>
             </p>
             ";
     }
